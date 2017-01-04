@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <script src='itcast_with_ajax.js'></script>
+<script src='json2.js'></script>
+
+<style>
+.regForm-item-ct .owned {
+    width: 330px;
+    height: auto;
+    background-color: #FFFFE1;
+    border: 2px solid #C6C6A8;
+    position: relative;
+    margin-top: 13px;
+    overflow: visible;
+}
+.regForm-item-ct .owned .arr {
+    width: 25px;
+    height: 14px;
+    background-position: -576px -72px;
+    position: absolute;
+    left: 31px;
+    top: -14px;
+}
+.header .bg, .regTabs ul, .regForm-item-ct .owned .arr, .btnReg, .mainBody-side .norCont .intro, .g-msgbox .Aclose, .ico {
+    background-image: url("../img/glb_v2.png");
+    background-repeat: no-repeat;
+}
+.content {
+    text-align: left;
+}
+.regForm-item-ct .owned .attent {
+    padding: 14px 10px 14px 53px;
+    position: relative;
+}
+txt-14 {
+    font-size: 14px;
+}
+.txt-err, .txt-impt {
+    color: #C00;
+}
+regForm-item-ct .owned .others {
+    border-top: 1px solid #C6C6A8;
+    background-color: #FFF;
+    padding: 10px;
+    white-space: nowrap;
+}
+.regForm-item-ct .owned .others {
+    white-space: nowrap;
+}
+.txt-succ {
+    color: #3D882D;
+}
+.regForm-item-ct .owned .others li label {
+    float: left;
+    cursor: pointer;
+}.regForm-item-ct .owned .others li label {
+    float: left;
+    cursor: pointer;
+}
+#myinput{
+	width: 250px;
+    height: 30px
+	
+	}
+	
+	#conflictDiv{
+		display: block;
+		width: 300px;
+		background: rgb(255, 247, 233) none repeat scroll 0% 0%;
+		padding: 20px;
+		margin-top: 20px;
+		display:none		
+		}
+</style>
+</head>
+
+<body>
+<span>邮箱地址：<input type='text' id='myinput' /></span>
+
+<div id="conflictDiv">
+	<div class="arr"></div>
+	<div class="attent">
+	<b class="ico ico-warn-big"></b>
+	<strong id="conflictTitle" class="txt-impt txt-14"></strong>
+</div>
+	<div style="display: block;" id="conflictOthersDiv" class="others">
+	<div id="conflictMobile" class="ctExt">推荐邮箱
+	<a href="javascript:void(0);" onclick="_Global.mobile.turnOn(null,'recommend2');return false;" class="btnSml" hidefocus="true">免费注册</a></div>
+	<div>您还可以选择：</div>
+	<ul id="conflictOthers">
+         <li> shukui.216@vip.163.com</li>
+         <li> shukui.216@vip.163.com</li>
+         <li> shukui.216@vip.163.com</li>
+         <li> shukui.216@vip.163.com</li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
+<script>
+   var input = $$.$id('myinput');
+   var div = $$.$id('conflictDiv');
+   var ul = $$.$id('conflictOthers');
+   var tip = $$.$id('conflictTitle');
+   input.onfocus = function()
+   {
+	   conflictDiv.style.display= 'block';
+//       原来是myAjax
+//       如何使用封装好的来做呢：
+       $$.myAjax('http://localhost/data/wangyi.json',function(e){
+		        var json = JSON.parse(e);
+				if(json.isUsed =='no')
+				{
+					tip.innerHTML='该邮箱已经被使用';
+				}
+		         //推荐
+				 //动态生成li  然后添加到ul里面
+				 var li='';
+				 for(var i=0;i<json.tuijian.length;i++)
+				 {
+					   li +='<li>'+json.tuijian[i].email+'</li>';
+					   //var MyLi = document.createElement("li");
+                      // MyLi.innerHTML = json.tuijian[i].email;
+                       //ul.appendChild(MyLi);  
+				 }
+				 ul.innerHTML=li;
+		   });
+	   
+   }
+   
+</script>

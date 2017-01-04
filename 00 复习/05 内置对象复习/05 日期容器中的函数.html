@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+
+/******************************************************************************
+                                获取
+                        具体的某个日期或者时间
+ *******************************************************************************/
+
+//当使用构造函数实例化一个日期对象之后，接下来我们可以从其中获取具体的日期，时间等各种数字
+
+
+//获取日期 -  年（1970-????） 月(0-11） 日（0-31） 星期（0-6）
+console.log('获取日期')
+date = new Date();
+console.log(date.getFullYear())  //获取完整的年份(4位,1970-????)
+console.log(date.getYear())      //获取当前年份(2位，不准确，已淘汰) 从 ECMAScript v3 开始，JavaScript 的实现就不再使用该方法，而使用 getFullYear() 方法取而代之
+console.log(date.getMonth())     //获取当前月份(0-11,0代表1月)
+console.log(date.getDate());　　 //获取几号   - 0 - 31 比如25
+console.log(date.getDay());　　  //获取星期几 - 比如星期3的3
+
+
+//获取时间 - 小时（0-23）  分（0-59）  秒（0-659） 毫秒值(0-999)  比如：12:23:45 375
+console.log('获取时间')
+date = new Date();
+console.log(date.getHours())            //获取小时                      12
+console.log(date.getMinutes());         //获取分                        23
+console.log(date.getSeconds());         //获取秒                        45
+console.log(date.getMilliseconds());　　// 获取毫秒     　　             375
+console.log(date.getTime());　　        // 获取相对于1970-01-01的毫秒值   1443085759313
+
+
+
+
+
+
+
+/******************************************************************************
+                                    设置
+                            具体的某个日期或者时间
+ *******************************************************************************/
+
+
+//使用方法：创建一个日期对象，然后自定义具体的日期，时间
+
+
+//setFullYear(year, opt_month, opt_date) ：设置Date对象的年份值；4位年份。
+//setMonth(month, opt_date) ：设置Date对象的月份值。0表示1月，11表示12月。
+//setDate(date) ：设置Date对象的月份中的日期值；值的范围1~31 。
+//setHours(hour, opt_min, opt_sec, opt_msec) ：设置Date对象的小时值。
+//setMinutes(min, opt_sec, opt_msec) ：设置Date对象的分钟值。
+//setSeconds(sec, opt_msec) ：设置Date对象的秒数值。
+//setMilliseconds(msec) ：设置Date对象的毫秒值。
+
+
+//比如根据太阳的衰变动态计算太阳消失的时间
+
+date = new Date();
+date.setFullYear(9999); // => 9999年
+date.setMonth(11); // => 11：月；实际为12月份(月份从0开始计算)
+date.setDate(25); // => 25：日
+date.setHours(15); // => 15：时
+date.setMinutes(30); // => 30：分
+date.setSeconds(40); // => 40：秒
+date.setMilliseconds(333); // => 333：毫秒
+console.log(date); // =>  9999年12月25日 15点30分40秒 333毫秒
+
+</script>

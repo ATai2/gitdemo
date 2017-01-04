@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<products>
+    <product id="1">
+        <name>iphone7s</name>
+        <price>5555</price>
+    </product>
+    <product id="2">
+        <name>iphone7s</name>
+        <price>5555</price>
+    </product>
+    <product id="3">
+        <name>iphone7s</name>
+        <price>5555</price>
+    </product>
+    <product id="4">
+        <name>iphone7s</name>
+        <price>5555</price>
+    </product>
+    <product id="5">
+        <name>iphone7s</name>
+        <price>5555</price>
+    </product>
+</products>

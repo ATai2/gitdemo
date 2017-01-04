@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+    //代码执行：先生成一个执行环境，再执行
+
+    //全局作用域（全局变量）：
+    //1，最外层函数和在最外层函数外面定义的变量拥有全局作用域，如下的例子：sum=10， test， a=1
+    //函数本身也是一个特殊的变量，其名字就是函数名字
+    //2，未定义直接赋值的变量自动声明为拥有全局作用域  -- 比如 all1 all2
+    //3，所有window对象的属性拥有全局作用域，例如：window对象的内置属性都拥有全局作用域，例如window.name、window.location、window.top等
+    //我们也可以通过如下方式定义一个全局变量：window.name=11
+
+
+    //执行环境类似一个表格：第一行放置全局变量，第二行放置局部变量
+    //变量搜索机制：先搜索局部变量，如果没找到，搜索全部变量
+//    第一行：sum， test， a
+//    第二行：a， foo
+
+
+    /*看看函数的执行*/
+    /*a：由于变量声明提升，这里a变量是存在的，但是是undefined*/
+    var sum =0;
+    var a = 10
+    all1 = 1000;
+    function test() {
+        //这个时候由于变量声明提升，a变量已经声明，并且值是undefined
+        console.log(a);
+        all2 = 200;
+        //foo是一个函数，解析的时候会提升，所以能够访问到
+        console.log(foo());
+        /*如果省略下面这句 输出结果是什么*/
+        //var a =1;
+        function foo() {
+            return 2;
+        }
+    }
+    test();
+</script>

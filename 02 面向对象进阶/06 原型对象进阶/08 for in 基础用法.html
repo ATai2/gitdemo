@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    function Product(){
+        this.name='iphone8'
+        this.description='手机中的战斗机'
+        this.price=7777
+        this.date=new Date()
+        this.add = function(){}
+    }
+
+    Product.prototype={
+        date:'2017-8-8',
+        buy:function(){}
+    }
+    var iphone = new Product()
+
+    for(var item in iphone) {
+        if(item == 'price')
+        {
+            console.log(iphone[item]*0.9) ;
+        }
+        if(item == 'date')
+        {
+            console.log(iphone[item].toLocaleDateString()) ;
+        }
+    }
+    
+    
+    
+    
+</script>

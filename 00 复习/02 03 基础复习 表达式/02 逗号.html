@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var x= 0,y= 0,z=0;
+    var result = (x=8*2,x*4) /*整个表达式的值为64，x的值为16*/
+    console.log(result)
+    console.log(x)
+
+
+    x=(z=5,5*2) /*整个表达式为赋值表达式，它的值为10，z的值为5*/
+    console.log(x)
+    console.log(z)
+
+    x=z=5,5*2 /*整个表达式为逗号表达式，它的值为10，x和z的值都为5*/
+    console.log(x)
+    console.log(z)
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+    <div>传智播客</div>
+    <div>传智播客</div>
+    <div>传智播客</div>
+    <div>传智播客</div>
+    <div>传智播客</div>
+</body>
+</html>
+<script>
+
+    //定义一个对象 - 名字是$
+    var $ = function() {};
+
+    $.prototype.$id=function(id) {
+        return document.getElementById(id)
+    }
+
+    $.prototype.$tag=function(tag) {
+        return document.getElementsByTagName(tag)
+    }
+
+    //在框架中实例化，这样外面使用的使用就不用实例化了
+    //前面讲过了，对象使用之前需要先实例化
+    $= new $();
+
+
+
+    //使用封装好的对象
+//    document.getelement
+    var btn = $$.$id('btn')
+    var divs = $$.$tag('div')
+    btn.onclick = function(){
+        for(var i= 0,len=divs.length;i<len;i++){
+            divs[i].style.background='red'
+        }
+    }
+</script>
+

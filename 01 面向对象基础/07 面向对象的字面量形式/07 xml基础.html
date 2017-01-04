@@ -1,0 +1,45 @@
+<HTML>
+<head>
+    <title> Hello </title>
+    <meta charset="GB2312"/>
+</head>
+<BODY>
+<h1>产品列表</h1>
+<div id='div'>
+
+</div>
+</BODY>
+</HTML>
+<script>
+    //生XML对象。
+    function createXMLDom(){
+        if (window.ActiveXObject)
+            var xmldoc=new ActiveXObject("Microsoft.XMLDOM");
+        else
+        if (document.implementation&&document.implementation.createDocument)
+            var xmldoc=document.implementation.createDocument("","doc",null);
+        xmldoc.async = false;
+        //为了和FireFox一至，这里不能改为False;
+        xmldoc.preserveWhiteSpace=true;
+        return xmldoc;
+    }
+    //加载XML文件。
+    var xmlDom=createXMLDom();
+    xmlDom.load("products.xml");
+    //获得根节点
+    var root=xmlDom.documentElement;
+    var data="";
+    var names=root.getElementsByTagName("name");
+    var ages=root.getElementsByTagName("price");
+    var len=names.length;
+    for(var i=0;i<len;i++) {
+        data+="<strong>产品名称:</strong>";
+        data+=names[i].firstChild.nodeValue;
+        data+=" <strong>产品价格:</strong>";
+        data+=ages[i].firstChild.nodeValue;
+        data+=" <br />";
+    }
+    console.log(data)
+    var div = document.getElementById('div')
+    div.innerHTML = data;
+</script>
