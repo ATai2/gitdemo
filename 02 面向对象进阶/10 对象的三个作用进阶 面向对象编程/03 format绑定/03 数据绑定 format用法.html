@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div">
+    <span id='span'>
+
+    </span>
+
+</div>
+</body>
+</html>
+<script src='itcast.js'></script>
+<script>
+
+    window.onload=function(){
+        var isLogin=true;
+        if(isLogin){
+            Login()
+        }else{
+            noLogin()
+        }
+    }
+
+    //登录成功后 -简单的绑定
+    function LoginOld(){
+       /* 数据
+        将数据和html进行绑定*/
+        var user={name:'书奎'}
+        var span = document.getElementById("span");
+        span.innerHTML = "欢迎"+user.name+'来到百度世界';
+
+    };
+    /*不用考虑拼接*/
+    function Login(){
+        var user={name:'马院长XXX',role:'钻石会员XXX'}
+        var span = document.getElementById("span");
+        span.innerHTML = $$.formateString("欢迎#(name) #(role)来到百度世界",user)
+    };
+
+</script>

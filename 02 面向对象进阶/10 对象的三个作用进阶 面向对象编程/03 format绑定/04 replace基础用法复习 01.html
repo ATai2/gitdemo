@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+
+    /******************************************************************************
+     replace用法1 - 基础用法
+     最核心的易错点：如果要替换全部匹配项，需要传入一个 RegExp 对象并指定其 global 属性。
+     *******************************************************************************/
+    console.log('replace基本用法')
+
+    //基本用法：
+    myString = "javascript is a good script language";
+    //在此我想将字母a替换成字母A
+    console.log(myString.replace("a","A"));
+    //    我想大家运行后可以看到结果，它只替换了找到的第一个字符，如果想替换多个字符怎么办？
+    //    答案：结合正则表达式，这也是replace的核心用法之一！
+
+
+    //将字母a替换成字母A 错误的写法  少了/g
+    myString = "javascript is a good script language";
+    console.log(myString.replace(/a/,"A"));
+    //console.log(myString.replace(new RegExp('a','gm'),"A"));
+
+    //将字母a替换成字母A  正确的写法 /g表示匹配所有
+    myString = "javascript is a good script language";
+    console.log('替换全部')
+    console.log(myString.replace(/a/g,"A"));
+
+</script>

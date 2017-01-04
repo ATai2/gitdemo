@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>compile-demo</title>
+    <script src='template.js'></script>
+</head>
+
+<body>
+<h1>在javascript中存放模板</h1>
+<div id="content"></div>
+<script>
+    /*数据绑定*/
+    var film= {name:'美人鱼',lead:'周星驰',role:'邓超'}
+
+    var source = '<strong>{{name}}</strong>'
+            +  '<strong>{{lead}}</strong>'
+            +  '<strong>{{role}}</strong>'
+
+
+//    var render = template.compile(source);
+//    var html = render(film)
+
+    document.getElementById('content').innerHTML = $$.artTemplate(source,film);
+
+    //函数的作用：隐藏复杂性
+
+</script>
+</body>
+</html>

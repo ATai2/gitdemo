@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+function createPerson(original){
+var clone = new Object(original); //通过调用函数创建一个新对象
+var clone =function(original){}
+clone.sayHi = function(){ //以某种方式来增强这个对象
+alert("hi,"+original.name);
+};
+return clone; //返回这个对象
+}
+
+
+
+var person = {
+name: "Nicholas",
+friends: ["Shelby", "Court", "Van"]
+};
+var anotherPerson = createPerson(person);
+anotherPerson.sayHi(); //"hi"
+</script>

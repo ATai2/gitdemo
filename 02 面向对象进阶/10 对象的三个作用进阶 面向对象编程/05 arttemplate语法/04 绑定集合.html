@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <script src='template.js'></script>
+    <script src='itcast.js'></script>
+</head>
+
+<body>
+<div id='mydiv'></div>
+</body>
+</html>
+
+<!--模板王者演示-->
+<script id="arttemplate" type="text/html">
+    <h2>{{name}}</h2>
+    <ul>
+        {{each films}}
+            <li>
+                <strong>电影名称：</strong>{{$value.title}}<br>
+                <strong style='color:red'>导演</strong>{{$value.lead}}
+                <strong style='color:green'>主演:</strong>{{$value.role}}
+            </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script>
+
+    //定义数据
+    //var =[{},{},{}]
+    /*1 必须是键值对
+    2 必须双引号：key value都必须是双引号*/
+
+    /*数据结构*/
+   /* 1 简单变量 var str = ''; var num=''; var bool='';
+     2 数组 []
+     3 字典  - json {key：‘’，value：‘’} [{key:'',value:''}]
+     4 对象  -
+     5 队列  - 数组
+     6 堆栈  - 数组
+     7 树    - 导航
+     8 图*/
+
+
+    var data ={
+        name:'电影列表',
+        films:
+                [
+                    {
+                        title: '复仇者联盟2',
+                        lead: '乔斯·韦登',
+                        role: '小罗伯特·唐尼'
+                    },
+                    {
+                        title: '速度与激情7',
+                        lead: '范·迪塞尔',
+                        role: '范·迪塞尔'
+                    },
+                    {
+                        title: '左耳',
+                        lead: '苏有朋',
+                        role: '苏有朋'
+                    },
+                    {
+                        title: '万物生长',
+                        lead: '范冰冰',
+                        role: '范冰冰 韩庚'
+                    },
+                    {
+                        title: '盗墓笔记',
+                        lead: '苏有朋',
+                        role: '美人鱼'
+                    }
+                ]
+    }
+    var html = $$.bindTemplate('arttemplate',data)
+    $$.$id('mydiv').innerHTML = html
+</script>

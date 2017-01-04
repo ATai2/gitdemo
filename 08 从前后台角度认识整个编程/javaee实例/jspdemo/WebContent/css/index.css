@@ -1,0 +1,259 @@
+body,div,ul,li,h1,h2,h3,img,a{
+	font-family:'微软雅黑';
+	font-size:16px;
+	padding:0;
+	margin:0;
+	border:0;
+	list-style:none;
+	color:#666;
+	font-weight:300;
+}
+a{
+	display:block;
+	text-decoration:none;
+}
+body{
+	background-color:#f5f5f5;
+}
+#search{
+	width:100%;
+	height:40px;
+	position:fixed;
+	z-index:30;
+}
+#bg{
+	width:100%;
+	height:40px;
+	background-color:#c91523;
+	opacity:0;
+	position:absolute;
+}
+.logo{
+	position:absolute;
+	width:56px;
+	height:40px;
+	left:10px;
+}
+.logo span{
+	display:block;
+	width:56px;
+	height:32px;
+	margin-top:8px;
+	background-image:url(../img/sprites.png);
+	background-size:200px 200px;
+	background-position:0 -108px;
+}
+.search{
+	position:absolute;
+	left:76px;
+	right:50px;
+	height:40px;
+}
+.search-input{
+	width:auto;
+	height:30px;
+	margin-top:5px;
+	background-color:#fff;
+	border-radius:15px;
+	overflow:hidden;
+}
+.search-icon{
+	width:20px;
+	height:20px;
+	background-image:url(../img/sprites.png);
+	background-size:200px 200px;
+	background-position:-60px -109px;
+	margin:5px 0 0 5px;
+	float:left;
+}
+.search-text{
+	width:auto;
+	height:30px;
+	line-height:30px;
+	color:#666;
+	float:left;
+	font-size:13px;
+	margin-left:5px;
+}
+.login{
+	position:absolute;
+	width:30px;
+	height:40px;
+	right:10px;
+	font-size:15px;
+	line-height:40px;
+	color:#fff;
+}
+
+#view{
+	width:100%;
+}
+.touchimg{
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+.touchimg ul{
+	width:1000%;
+	transform:translate(-10%,0);
+}
+.touchimg ul li{
+	width:10%;
+	float:left;
+}
+#point{
+	width:112px;
+	height:8px;
+	position:absolute;
+	left:50%;
+	bottom:5px;
+	margin-left:-56px;
+}
+#point span{
+	display:block;
+	float:left;
+	width:4px;
+	height:4px;
+	border:1px solid #fff;
+	margin:0 4px;
+	border-radius:2px;
+}
+.current{
+	background-color:#fff;
+}
+#nav{
+	height:147px;
+	width:94%;
+	padding:0 3%;
+	background-color:#fff;
+	overflow:hidden;
+	box-shadow:0 1px 1px #ebebeb;
+}
+#nav span{
+	display:block;
+	float:left;
+	width:25%;
+	height:60px;
+	margin-top:11px;
+}
+#nav span img{
+	display:block;
+	width:40px;
+	height:40px;
+	margin:0px auto;
+}
+#nav span h2{
+	font-size:14px;
+	font-weight:300;
+	text-align:center;
+}
+#centent{
+	margin:10px 5px;
+	background-color:#fff;
+	box-shadow:0 1px 1px #dcdcdc;
+}
+.centent-top{
+	height:32px;
+	overflow:hidden;
+}
+.centent-top span{
+	display:block;
+	width:16px;
+	height:20px;
+	margin:4px 4px 0 4px;
+	background-image:url(../img/seckill-icon.png);
+	background-size:16px 20px;
+	float:left;
+}
+.centent-top h2{
+	float:left;
+	font-size:15px;
+	color:#f00;
+	line-height:30px;
+	margin-right:10px;
+}
+.centent-time span{
+	background-image:none;
+	margin:5px 1px;
+	width:5px;
+	color:#5d5d5d;
+	font-size:14px;
+	font-weight:700;
+	text-align:center;
+}
+.centent-top .time-text{
+	color:#fff;
+	font-size:16px;
+	width:15px;
+	font-weight:300;
+	background-color:#5d5d5d;
+}
+.centent-more{
+	float:right;
+	line-height:30px;
+	margin-right:5px;
+	font-size:14px;
+}
+.centent-bottom{
+	padding-top:7px;
+	overflow:hidden;
+}
+.centent-bottom li{
+	width:33.3%;
+	float:left;
+}
+
+.centent-bottom li img{
+	display:block;
+	border-right:1px solid #e6e6e6;
+	width:60%;
+	padding:0 20% 5px;
+}
+.centent-bottom li span{
+	display:block;
+	text-align:center;
+	font-size:14px;
+}
+.seckill-now{
+	color:#f15353;
+}
+.seckill-old{
+	text-decoration:line-through;
+}
+.floor{
+	margin:0 5px 12px;
+	background-color:#fff;
+	box-shadow:0 1px 1px #dcdcdc;
+	overflow:hidden;
+}
+.floor-title{
+	font-size:15px;
+	padding-top:8px;
+	padding-left:7px;
+	padding-bottom:5px;
+}
+.floor-title:before{
+	display:inline-block;
+	content:'';
+	width:3px;
+	height:12px;
+	background-color:#d8505c;
+	margin:1px 7px 0 0;
+}
+.floor-product{
+	width:100%;
+}
+.floor-product-list{
+	width:50%;
+	overflow:hidden;
+	float:left;
+}
+.floor-product-list img{
+	width:100%;
+	display:block;
+	border-top:1px solid #eee;
+}
+.floor-left{
+	border-right:1px solid #eee;
+	margin-left:-1px;
+}

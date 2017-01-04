@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+    <script type="text/javascript">  
+      
+           function Person(name, age)  
+           {  
+               this.name = name;  
+               this.age = age;  
+               this.hobbies = [];  
+           }  
+           Person.prototype.say = function ()  
+           {  
+               console.log(this.name + " , " + this.age +" , " + this.hobbies);  
+           }  
+      
+           function Student(name, age, no)  
+           {  
+               /** 
+                * 使用call方法，第一个参数为上下文； 
+                * 有点类似Java中的super(name,age)的感觉 
+                */  
+               Person.call(this, name, age);  
+               this.no = no;  
+           }  
+      
+           Student.prototype = new Person();  
+      
+           var stu1 = new Student("0001","张三",11);  
+           stu1.hobbies.push("soccer");  
+           stu1.say();  
+      
+           var stu2 = new Student("0002","李四",12);  
+           stu2.hobbies.push("cangjin");  
+           stu2.hobbies.push("basketball");  
+           stu2.say();  
+      
+       </script>  

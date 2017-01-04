@@ -1,0 +1,228 @@
+body,div,ul,li,h1,h2,h3,img,a{
+	font-family:'PingHei';
+	font-size:16px;
+	padding:0;
+	margin:0;
+	border:0;
+	list-style:none;
+	color:#666;
+	font-weight:300;
+}
+a,span{
+	display:block;
+	text-decoration:none;
+}
+body{
+	background-color:#f5f5f5;
+}
+#header{
+	display:block;
+	background-color: #333;
+	background-image:url(../img/header-bg.png);
+	background-size:100% 44px;
+	width:100%;
+	height:44px;
+	overflow:hidden;
+}
+.header-left{
+	width:40px;
+	height:44px;
+	position:absolute;
+}
+.header-left span{
+	width:20px;
+	height:20px;
+	margin:12px 0 0 10px;
+	background-size:200px 200px;
+	background-position:-20px 0;
+	background-image:url(../img/sprites.png);
+}
+.header-center{
+	height:44px;
+	position:absolute;
+	left:40px;
+	right:40px;
+}
+.header-center span{
+	width:96%;
+	height:30px;
+	color:#252525;
+	text-align:center;
+	line-height:44px;
+	font-size:15px;
+	font-family:'PingHei';
+}
+.header-right{
+	width:40px;
+	height:44px;
+	position:absolute;
+	right:0;
+}
+.header-right span{
+	width:20px;
+	height:20px;
+	margin:12px 0 0 10px;
+	background-size:200px 200px;
+	background-position:-60px 0;
+	background-image:url(../img/sprites.png);
+}
+#view{
+	width:100%;
+	height:320px;
+	border-bottom:1px solid #dfdfdf;
+
+}
+.viewWarp{
+	width:320px;
+	height:320px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+}
+.viewWarp img{
+	width:320px;
+	height:320px;
+}
+.viewText{
+	position:absolute;
+	bottom:5px;
+	right:5px;
+	background-color:rgba(0,0,0,.3);
+	width:50px;
+	height:50px;
+	text-align:center;
+	color:#fff;
+	line-height:50px;
+	border-radius:25px;
+	font-weight:500;
+}
+.viewText span{
+	display:inline-block;
+	font-size:20px;
+}
+#des{
+	margin:15px 10px;
+}
+#des .desText{
+	color:#000;
+}
+#des .desNumber{
+	margin-top:10px;
+	color:#F15353;
+	font-weight:700;
+	font-size:22px;
+	font-family:'微软雅黑';
+}
+#list{
+	width:100%;
+	height:150px;
+	border-top:1px solid #dfdfdf;
+	padding:10px 0 0 0;
+
+}
+#list span{
+	display:inline-block;
+	color:#777;
+	margin-bottom:10px;
+}
+#list div{
+	color:#000;
+}
+.listBox{
+	padding:3px 5px;
+	border:1px solid #696969;
+	color:#696969;
+	border-radius:3px;
+}
+.listCurrent.listBox{
+	border:1px solid #f15353;
+	color:#f15353;
+}
+.shuliang span{
+	display:block;
+	float:left;
+}
+.listLeft{
+	margin-left:15px;
+	padding:3px 10px;
+	border:1px solid #696969;
+	color:#696969;
+	border-radius:3px 0 0 3px;
+}
+.listNum{
+	padding:3px 20px;
+	border:1px solid #696969;
+	color:#696969;
+}
+.listRight{
+	padding:3px 10px;
+	border:1px solid #696969;
+	color:#696969;
+	border-radius:0px 3px 3px 0px;
+}
+#buy{
+	width:100%;
+	height:50px;
+	position:fixed;
+	bottom:0;
+}
+.buyLeft{
+	float:left;
+	width:40%;
+	height:50px;
+	background-color:rgba(0,0,0,.5);
+}
+.buyCenter{
+	float:left;
+	width:30%;
+	height:50px;
+	background-color:#ffb03f;
+	color:#fff;
+	text-align:center;
+	line-height:50px;
+	font-weight:500;
+	font-family:'微软雅黑';
+}
+.buyRight{
+	float:left;
+	width:30%;
+	height:50px;
+	background-color:#f15353;
+	color:#fff;
+	text-align:center;
+	line-height:50px;
+	font-weight:500;
+	font-family:'微软雅黑';
+}
+.buyLeft strong{
+	font-size:14px;
+	color:#fff;
+	font-weight:300;
+}
+.guanzhu{
+	width:50%;
+	height:50px;
+	text-align:center;
+	float:left;
+}
+.gouwuche{
+	width:50%;
+	height:50px;
+	text-align:center;
+	float:left;
+}
+.guanzhu span{
+	width:20px;
+	height:20px;
+	background-image:url(../img/focus-icon.png);
+	background-size:100px 100px;
+	margin:10px auto 0;
+}
+.gouwuche span{
+	width:27px;
+	height:20px;
+	background-image:url(../img/sprits_btm_new.png);
+	background-position:0 -23px;
+	background-size:50px 50px;
+	margin:10px auto 0;
+}

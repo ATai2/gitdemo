@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>compile-demo</title>
+    <script src='template.js'></script>
+</head>
+
+<body>
+<h1>在javascript中存放模板</h1>
+<div id="content"></div>
+<script>
+    var film= {name:'美人鱼',lead:'周星驰',role:'邓超'}
+    var source = '<strong>{{name}}</strong>'
+            +  '<strong>{{lead}}</strong>'
+            +  '<strong>{{role}}</strong>'
+
+
+    document.getElementById('content').innerHTML = artTemplate(source,film);
+
+    //三个参数
+    function artTemplate(html,data){
+        var render = template.compile(html);
+        var str = render(data)
+        return str;
+    }
+
+</script>
+</body>
+</html>

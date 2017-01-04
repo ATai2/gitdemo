@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+
+
+    /******************************************************************************
+     replace用法2 - 高级用法 第二个参数可以是函数 - 最常用 必考点
+     *******************************************************************************/
+
+        //无敌的函数 - replace第二个参数可以传递函数
+        //如果第二参数是一个函数的话，那么函数的参数是什么呢？
+    console.log('replace功能5 - 无敌的函数 - replace第二个参数可以传递函数')
+    var myString = "bbabc";
+    myString.replace(/(a)(b)/g, function(){
+        console.log(arguments) // ["ab", "a", "b", 2, "bbabc"]
+    });
+    //    参数将依次为：
+    //    1、整个正则表达式匹配的字符。
+    //    2、第一分组匹配的内容、第二分组匹配的内容…… 以此类推直到最后一个分组。
+    //    3、此次匹配在源自符串中的下标（位置）。
+    //    4、源自符串
+    //    所以例子的输出是 ["ab", "a", "b", 2, "bbabc"]
+
+
+    //用法举例  首字母大写 -- 一个参数 表示匹配的整个字符串
+    console.log('replace功能3 - 将首字符转为大写')
+
+    //在本例中，我们将把字符串中所有单词的首字母都转换为大写：
+    myString = 'aaa bbb ccc';
+    myString=myString.replace(/\b\w+\b/g, function(word){
+                return word.substring(0,1).toUpperCase()+word.substring(1);}
+    );
+    console.log(myString)
+
+
+
+    //用法举例  首字母大写 -- 多个参数 - 第一个表示匹配的整个字符串，后面的表示分组中的内容
+    /* 字符^
+     意义：表示匹配的字符必须在最前边。
+     例如：/^A/不匹配"an A,"中的'A'，但匹配"An A."中最前面的'A'。
+
+     字符$
+     意义：与^类似，匹配最末的字符。
+     例如：/t$/不匹配"eater"中的't'，但匹配"eat"中的't'。*/
+    function capitalize(str){
+        return str.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase();
+        } );
+
+    };
+    myString = "i am a boy !"
+    console.log(capitalize(myString)) //I Am A Boy！
+
+
+</script>

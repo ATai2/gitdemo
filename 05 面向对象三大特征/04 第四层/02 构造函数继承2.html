@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person(name, age，test，test2)    {  }
+	Person.prototype.say = function ()   {   }
+	function Student(name, age, no)
+	{
+		Person.call(this,  age,test2);
+		//自己的属性
+		this.no = no;
+	}
+	Student.prototype = new Person();
+	var stu1 = new Student("0001","张三",11);
+
+</script>
+</body>
+</html>

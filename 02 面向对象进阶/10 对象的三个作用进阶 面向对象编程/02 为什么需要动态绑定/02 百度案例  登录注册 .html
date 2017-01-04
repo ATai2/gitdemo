@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    *{margin: 0 auto;padding: 0;list-style: none;border: 0; text-align: center;}
+    a{  text-decoration:none; color:white }
+    body{background: url(baidu/bg.jpg); -webkit-background-size: cover;
+        background-size: cover;}
+    .logo{margin-top: 30px; display: block;}
+    .links{width: 740px; margin: 0 auto;}
+    .links a{color: #fff; margin-right: 10px;}
+    .search{margin-bottom: 40px; margin-top: 10px;}
+    .search input{width: 537px; height: 40px;}
+    .search button{width: 104px; height: 40px;}
+    .container{width: 911px;}
+    .menu{width: 80px; height: 318px; float: left; background: rgba(0,0,0,0.4);}
+    .menu span{width: 80px; height: 35px; line-height: 35px; color: #fff; display: inline-block; font-weight: bold; font-size: 14px;}
+    .menu span.choose{background: rgba(255,255,255,0.6) url(baidu/menu.png);}
+    .card{width: 813px; height: 318px; float: right; background: rgba(255,255,255,0.6); }
+    .card .main{padding: 20px;}
+
+    #u1 {
+        z-index: 1112;
+        color: #FFF;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        margin: 19px 0px 5px;
+        padding: 0px 96px 0px 0px;
+    }
+    #u1 span{
+        margin-left:20px
+    }
+</style>
+<script type="text/javascript" src="ICD.js"></script>
+<body>
+<img class="logo" width="270" src="baidu/logo_white.png" alt="">
+<div id="u1">
+    <span>
+        <a href="http://www.nuomi.com/?cid=002540" name="tj_trnuomi" class="mnav">糯米</a>
+        <a href="http://news.baidu.com" name="tj_trnews" class="mnav">新闻</a>
+        <a href="http://www.hao123.com" name="tj_trhao123" class="mnav">hao123</a>
+        <a href="http://map.baidu.com" name="tj_trmap" class="mnav">地图</a>
+        <a href="http://tieba.baidu.com" name="tj_trtieba" class="mnav">贴吧</a>
+    </span>
+    <span id='span'>
+        <a>登录</a>
+        <a>注册</a>
+    </span>
+</div>
+<p class="links">
+    <a href="http://news.baidu.com" target="_blank">新闻</a>
+    <a href="http://www.baidu.com" target="_blank">网页</a>
+    <a href="http://tieba.baidu.com" target="_blank">贴吧</a>
+    <a href="http://zhidao.baidu.com" target="_blank">知道</a>
+    <a href="http://music.baidu.com" target="_blank">音乐</a>
+    <a href="http://image.baidu.com" target="_blank">图片</a>
+    <a href="http://v.baidu.com" target="_blank">视频</a>
+    <a href="http://map.baidu.com" target="_blank">地图</a>
+    <a href="http://baike.baidu.com" target="_blank">百科</a>
+    <a href="http://wenku.baidu.com" target="_blank">文库</a>
+    <a href="http://www.baidu.com/more/" target="_blank">更多&gt;&gt;</a>
+</p>
+<div class="search">
+    <input type="text"><button>百度一下</button>
+</div>
+<div class="container">
+    <div class="menu">
+        <span>导航</span>
+        <span class="choose">音乐</span>
+        <span>新闻</span>
+    </div>
+    <div id="card" class="card"><div class="main"></div></div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    window.onload=function(){
+        var isLogin=true;
+        if(isLogin){
+            Login()
+        }else{
+            noLogin2()
+        }
+    }
+
+    //    未登录
+    function noLogin(){
+
+        var loginlink = document.createElement("a");
+        loginlink.setAttribute("id", "login");//设置属性
+        loginlink.setAttribute("name", "login");//设置属性
+        loginlink.setAttribute("class", "link");//设置class
+        loginlink.style.color="green";//设置样式
+        loginlink.href = ''; //赋值超链接网址
+        loginlink.innerHTML = '登录'; //超链接显示的文字内容
+
+
+
+        var rlink = document.createElement("a");
+        rlink.setAttribute("id", "register");//设置属性
+        rlink.setAttribute("name", "register");//设置属性
+        rlink.setAttribute("class", "link");//设置class
+        rlink.href = ''; //赋值超链接网址
+        rlink.innerHTML = '注册'; //超链接显示的文字内容
+
+
+//        添加到div中
+        var span = document.getElementById("span");
+        span.appendChild(loginlink);//添加到div元素中
+        span.appendChild(rlink);//添加到div元素中
+    };
+
+
+    //    第二种方式  innerHTML
+    function noLogin2(){
+
+        var span = document.getElementById("span");
+        span.innerHTML = "<a href='' id='login' name='login' class='link'>登录2</a><a href='' id='register' class='link'>注册2</a>";
+
+    };
+
+    //登录成功后 -简单的绑定
+    function Login(){
+        var user={name:'书奎'}
+        var span = document.getElementById("span");
+        span.innerHTML =  "<a id='user' href='http://www.baidu.com'>欢迎"+user.name+"来到百度世界</a>";
+        var link = document.getElementById('user')
+        link.onclick = function(){
+            window.open('http://www.baidu.com')
+        }
+    };
+</script>
