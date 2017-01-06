@@ -1,54 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
 </head>
 
 <body>
 </body>
 </html>
 <script>
-  //爷爷
-function SuperParent(){
+    //爷爷
+    function SuperParent() {
         this.name = 'mike';
     }
-
-
-//父亲 - 二次继承：
-function Parent(){
+    //父亲 - 二次继承：
+    function Parent() {
         this.age = 12;
     }
-Parent.prototype = new SuperParent();//Child继承Parent，通过原型，形成链条
+    Parent.prototype = new SuperParent();//Child继承Parent，通过原型，形成链条
 
     var test = new Parent();
-    alert("测试父亲可以访问爷爷属性："+test.name);
-    alert("测试父亲可以访问自己的属性："+test.age);//得到被继承的属性
+    alert("测试父亲可以访问爷爷属性：" + test.name);
+    alert("测试父亲可以访问自己的属性：" + test.age);//得到被继承的属性
 
-
-  //儿子：继续原型链继承 - 三次继承
-function Child(){   //brother构造
-    this.weight = 60;
+    //儿子：继续原型链继承 - 三次继承
+    function Child() {   //brother构造
+        this.weight = 60;
     }
-Child.prototype = new Parent();
-
-
-
-
-
+    Child.prototype = new Parent();
     //继续原型链继承
     var child = new Child();
-    alert("测试儿子可以访问爷爷的属性："+child.name);
-
+    alert("测试儿子可以访问爷爷的属性：" + child.name);
     //继承了Parent和Child,弹出mike
-    alert("测试儿子可以访问父亲的属性："+child.age);//弹出12
-     
-    alert("测试儿子可以访问自己独特的属性："+child.weight);//弹出12
-	
-	
-	
-	
-
-	
-	
+    alert("测试儿子可以访问父亲的属性：" + child.age);//弹出12
+    alert("测试儿子可以访问自己独特的属性：" + child.weight);//弹出12
 </script>

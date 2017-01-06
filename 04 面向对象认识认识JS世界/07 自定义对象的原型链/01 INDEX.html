@@ -13,17 +13,12 @@
 
     //object的__proto__指向的是Function.prototype
     console.log(Object.__proto__ ===Function.prototype)
-
-
-
     /*null*/
     console.log(Object.prototype.__proto__)
-
 
     /*object*/
     console.log(Function.prototype.__proto__ === Object) //false
     console.log(Function.prototype.__proto__ === Object.prototype)  //ture
-
 
     /*内置对象的__proto__指向*/
     console.log(Number.__proto__ === Function.prototype)  // true
@@ -37,8 +32,7 @@
     Error.__proto__ === Function.prototype   // true
     Date.__proto__ === Function.prototype    // true*/
 
-
-
+    console.log('sdfsddsdsdsdsdsdsds')
     /*自定义对象的原型的__proto__指向*/
     function Product(){}
 
@@ -46,8 +40,17 @@
 
     var iphone = new Product()
 
+    console.log(iphone.__proto__===Product.prototype)
+    console.log(Product.prototype.__proto__===Object.prototype)
+    console.log(Object.__proto__===Function.prototype)
+    console.log(Object.prototype.__proto__===null)
+    console.log(Function.prototype===null)
+    console.log(Object.__proto__===Function.prototype)
 
     console.log(Product.prototype.__proto__)
+    console.log(Product.prototype===Object)
+    console.log(Product.prototype===Function.prototype)
+    console.log(Product.prototype.__proto__===Function.prototype)
     console.log(Product.prototype.__proto__ === Object)  //false
     console.log(Product.prototype.__proto__ === Object.prototype) //true
 
@@ -74,8 +77,5 @@
 
     console.log(Product.__proto__ ===Function.prototype)
 
-
     console.log(Array.prototype.__proto__  === Object.prototype )
-
-
 </SCRIPT>

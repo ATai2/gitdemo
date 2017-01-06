@@ -55,26 +55,25 @@ function xingzuo(data,num){
     this.index = num;
    /* this.index=num*/
     this.data = data;
-    this.dom = $('<div></div>').addClass('item num-'+num)
-    this.config={jqueryContainer:$('.xingzuo')}
+    this.dom = $('<div></div>').addClass('item num-'+num);
+    this.config={jqueryContainer:$('.xingzuo')};
     this.init()
 }
 xingzuo.prototype={
     init:function(){
-        this.bindDOM()
-        this.bindEvents()
+        this.bindDOM();
+        this.bindEvents();
     },
 
     bindDOM:function(){
-        var str =''
-        str +=' <div class="image"></div>'
-        str +='<div class="description">'
-        str +='<p class="name">{{name}}</p>'
-        str +='<p class="time">{{time}}</p>'
-        str +='<div class="mark"></div>'
-        str +='</div>'
-        this.dom.html($$.artTemplate(str, this.data)).appendTo(this.config.jqueryContainer)
-
+        var str ='';
+        str +=' <div class="image"></div>';
+        str +='<div class="description">';
+        str +='<p class="name">{{name}}</p>';
+        str +='<p class="time">{{time}}</p>';
+        str +='<div class="mark"></div>';
+        str +='</div>';
+        this.dom.html($$.artTemplate(str, this.data)).appendTo(this.config.jqueryContainer);
     },
     bindEvents:function(){
         var that = this;
@@ -91,11 +90,9 @@ xingzuo.prototype={
             window.location = 'detail.html?num='+that.index
         })
     }
-}
-
-
+};
 //我的同位
 for(var i=0;i<data.length;i++){
-    new xingzuo(data[i],i)
+    new xingzuo(data[i],i);
     //item.init()
 }

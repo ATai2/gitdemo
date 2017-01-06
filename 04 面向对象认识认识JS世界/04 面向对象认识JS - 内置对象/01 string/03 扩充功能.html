@@ -8,14 +8,12 @@
 
 </body>
 </html>
-
 <script>
-
+//    Math.random()
   /*新增一个方法*/
     String.prototype.alertSelf=function(){
        alert(this)
     }
-
   //重写方法
   String.prototype.join =function(){
       alert('ssdfdfd')
@@ -23,21 +21,12 @@
 
 str.join()
 
-
-
   /*trim是ES5新增的，以前的版本不支持，一般我们在编程的时候不会直接使用ES5，所以必须自己扩充*/
   String.prototype.trim = function() {
       return this.replace(/(^\s*)|(\s*$)/g, "");
   }
-
-
-
-
 var str =''
   str.trim()
-
   var str = '传智播客'
   str.alertSelf()
-
-
 </script>
